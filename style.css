@@ -60,7 +60,7 @@ h3 {
 }
 .switch-label {
   margin-right: 10px;
-  font-size: 15px;
+  font-size: 13px;
 }
 .form-section {
   display: none;
@@ -128,18 +128,18 @@ button:hover {
   bottom: 0;
   background-color: #ccc;
   transition: .15s;
-  border-radius: 34px;
+  border-radius: 20px;
 }
 
 .slider:before {
   box-sizing: border-box;
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
-  border: 2px solid #000;
+  height: 20px;
+  width: 20px;
+  border: 2px solid #000000;
   border-radius: 50%;
-  left: -2px;
+  left: 4px;
   bottom: -2px;
   background-color: #e8e8e8;
   transform: translateY(-0.2em);
@@ -162,12 +162,12 @@ input:hover + .slider:before {
 }
 
 input:checked + .slider:before {
-  transform: translateX(calc(60px - 34px)) translateY(-0.2em);
+  transform: translateX(calc(60px - 34px)) translateY(-0.1em);
 }
 
 /* Raise thumb when hovered & checked */
 input:hover:checked + .slider:before {
-  transform: translateX(calc(60px - 34px)) translateY(-0.3em);
+  transform: translateX(calc(60px - 34px)) translateY(-0.1em);
   box-shadow: 0 0.3em 0 #000;
 }
 
