@@ -1,0 +1,818 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="icon" href="logo-assinatura.png" type="image/png">
+  <meta property="og:site_name" content="Crie sua Assinatura">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://totvs-supermercados-suporte.github.io/assinatura/">
+  <meta name="description" content="Crie sua assinatura de forma rápida e simples!">
+  <title>Crie sua assinatura</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,900;1,100&display=swap');
+
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #ffa17f;
+        background: -webkit-linear-gradient(to left, #2c0c75, #ffa17f);
+        background: linear-gradient(to left, #2c0c75, #ffa17f);
+        overflow: hidden;
+    }
+    
+    
+    .star0 {
+        height: 1px;
+        width: 1px;
+        opacity: 1;
+        position: absolute;
+    }
+    
+    .star1 {
+        height: 2px;
+        width: 2px;
+        opacity: 0.2;
+        position: absolute;
+        border-radius: 50%;
+    }
+    
+    .star2 {
+        height: 3px;
+        width: 3px;
+        opacity: 0.1;
+        position: absolute;
+        border-radius: 50%;
+    }
+    
+    .star3 {
+        height: 4px;
+        width: 4px;
+        opacity: 0.5;
+        position: absolute;
+        border-radius: 50%;
+    }
+
+    .star0, .star1, .star2, .star3 {
+        z-index: 0.5; 
+    }
+    
+
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0 auto;
+    box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  margin-top: 20px;
+}
+
+
+.form-container {
+    flex: 1; 
+    padding: 15px;
+    max-width: 1000px; 
+    max-height: 600px;
+    background: #f2f2f2;
+    border-radius: 0px 30px 30px 0px;
+    box-shadow: 20px 20px 20px rgba(130, 130, 133, 0.19);
+}
+
+
+.icon {
+    margin-right: 8px;
+}
+
+img {
+  width: 100%;
+  max-width: 600px;
+  height: 500px;
+  border-radius: 30px 0px 0px 30px;
+  object-fit: cover;
+  box-shadow: 0px 0px 10px rgba(216, 79, 247, 0.14);
+  z-index: 1;
+}
+
+.informe-lider-container {
+  text-align: left;
+}
+
+.palavrastitulo {
+    font-size: 14px;
+}
+
+input[type="checkbox"] {
+    display: none;
+  }
+  
+  input[type="checkbox"] + label {
+    position: relative;
+    padding: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+
+  }
+  
+  input[type="checkbox"] + label:before {
+    content: '';
+    position: absolute;
+    top: 0%;
+    height: 8px;
+    width: 8px;
+    border: 1px solid purple;
+    flex-wrap: wrap;
+    transition: background-color 0.3s, border-color 0.3s;
+    border-radius: 2px;
+  }
+  
+  input[type="checkbox"]:checked + label:before {
+    content: '\2714';
+    line-height: 10px;
+    font-size: 12px;
+    background-color: purple;
+    color: white;
+  }
+
+  input[type="text"],
+textarea,
+select {
+    font-size: 15px;
+    width: 100%;
+    margin: 10px auto;
+    background-color: transparent;
+    color: #333;
+    outline: none;
+    border: none;
+}
+
+  #campoAdicional {
+    line-height: 10px;
+    padding: 10px;
+    overflow: hidden;
+    outline: none;
+    border: none;
+    border: 1px solid #ccc;
+    margin: 0 auto;
+    resize: none;
+    border-radius:5px;
+    font-size: 14px;
+}
+
+::placeholder {
+  color: #a5a4a4; 
+  font-size: 13px; 
+  font-style: italic;
+}
+
+
+  input[type="text"]::placeholder {
+    border: 1px solid;
+    border-radius: 0px;
+    background-color: #333;
+
+}
+
+textarea {
+    padding-top: 20px;
+    border-bottom: 1px solid #ccc;
+    background-color: transparent;
+    color: #333;
+    outline: none;
+    width: 100%;
+}
+
+
+
+input[type="text"], textarea, select {
+    width: 100%;
+    border: 1px solid;
+    border-radius: 0px;
+    color: #333;
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+
+select {
+    padding: 3px 5px; 
+    border: none;
+    border-bottom: 1px solid #ccc;
+    width: 60%;
+}
+
+#resultado {
+    width: 100%;
+    height: 160px; 
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    resize: vertical; 
+    font-size: 16px;
+    overflow-y: auto; 
+    scrollbar-width: thin; 
+    scrollbar-color: purple #f2f2f2; 
+}
+
+
+#resultado::-webkit-scrollbar {
+    width: 8px; /* Largura da scrollbar */
+    border-radius: 5px;
+}
+
+#resultado::-webkit-scrollbar-thumb {
+    background-color: purple; /* Cor do indicador de posição */
+    border-radius: 5px;
+}
+
+#resultado::-webkit-scrollbar-track {
+    background-color: #f2f2f2; /* Cor da área de track (fundo) */
+    border-radius: 5px;
+    background: transparent;
+}
+
+
+#copiar:hover {
+    background-color: #2332b7;
+}
+
+#copiar:active {
+    background-color: #2332b7;
+}
+
+.botoes {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.btn-copiar,
+.btn-limpar,
+.btn-gerar {
+    background-color: rgb(81, 35, 110);
+    transition: background-color 0.3s;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    padding: 6px 10px;
+    font-weight: bolder;
+  cursor: pointer;
+  position: relative;
+  box-sizing: border-box;
+  transition: all 400ms ease;
+  transform: scale(1.02);
+  margin-right: 10px;
+}
+
+
+.btn-limpar:hover {
+    background-color: #eb4848;
+    cursor: pointer;
+}
+
+.btn-limpar:active {
+    background-color: #eb4848;
+}
+
+.btn-gerar:hover {
+    background-color: rgb(138, 28, 169);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.btn-gerar:active {
+    background-color: rgb(28, 143, 237);
+    border-radius: 20px;
+}
+
+@media (max-width: 700px) {
+
+  *{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 0 auto;
+    margin: 0 auto;
+  }
+    .btn-gerar {
+        display: inline-flex;
+        padding: 8px 98px;
+        background-color: rgb(49, 15, 78);
+        color: white;
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: background-color 0.5s, color 0.3s;
+    }
+
+    img {
+      width: auto;
+      height: auto;
+      border-radius: 20px 0px 0px 20px;
+      display: none;
+  }
+
+
+  .btn-copiar, .btn-limpar {
+    border-radius: 10px;
+  }
+}
+
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #353540;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #101017;
+    border-radius: 20px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #353540;
+}
+
+input[type="text"] {
+    border-bottom: 1px solid;
+    background-color: transparent;
+    width: 50%;
+}
+
+#outroLider::placeholder {
+  color: rgb(158, 151, 151);
+  background-color: transparent; 
+  border: none;
+  font-size: 12px; 
+  font-style: italic; 
+}
+
+#outroTelefone::placeholder {
+  color: rgb(158, 151, 151);
+  background-color: transparent; 
+  border: none; 
+  font-size: 12px; 
+}
+
+#outroTelefone {
+    color: #333;
+    background-color: transparent; 
+    border: none; 
+    font-size: 12px;  
+    border-bottom: 1px solid #ccc;
+  }
+
+  #outroLider {
+    color:#333;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 12px; 
+    font-style: italic; 
+  }
+
+
+
+label[for="cargo"] {
+  font-size: 17px;
+  font-weight: bold;
+  color: #660e87;
+}
+
+label[for="campoAdicional"] {
+    font-size: 17px;
+  font-weight: bold;
+  color: #660e87;
+}
+
+
+
+#copiar,
+.btn-limpar {
+    display: none;
+}
+
+#campoOutro {
+  width: 500px;
+  line-height: 10px;
+}
+
+.palavrastitulo-time-label {
+  margin-bottom: 15px;
+}
+
+
+  </style>
+   
+</head>
+<body>
+  <div id="universe" class="container"> 
+    <img src="TOTVS2.png" alt="Logo">
+    <form class="form-container"> 
+
+      <div class="informe-lider-container">
+        <label for="cargo" class="palavrastitulo"><i class='bx bxs-user' style='color:#660e87' ></i> Quem é seu líder?</label><br>
+        <select id="cargo" class="palavrastitulo" onchange="mostrarCampoOutro()">
+            <option value="" disabled selected hidden>Selecione...</option>
+            <option value="Rolf Guenze">Rolf Guenze</option>
+            <option value="Hebert Pedersoli">Hebert Pedersoli</option>
+            <option value="Larissa Curbage">Larissa Curbage</option>
+            <option value="Paulo Basile">Paulo Basile</option>
+            <option value="OUTRO" class="palavrastitulo" style="color: rgb(37, 17, 221); font-size: 14px;font-weight: bold;">Não faço parte do Suporte...</option>
+</select>
+
+<div id="campoOutro" style="display: none;">
+  <label for="outroLider" class="palavrastitulo"><i class='bx bx-id-card' style='color:#883bb3;'></i> Cargo e Nome</label>
+  <input type="text" id="outroLider" placeholder="Exemplo: Líder João">
+  <br>
+  <label for="outroTelefone" class="palavrastitulo"><i class='bx bxs-phone-call' style='color:#883bb3' ></i> Telefone</label>
+  <input type="text" id="outroTelefone" placeholder="Exemplo: (16) 9 1234-5678">
+</div>
+
+    <br>
+    <label for="campoAdicional" class="palavrastitulo-time-label"><i class='bx bx-map-alt' style='color:#660e87' id="setor" ></i> Você é de que time?</label><br><br>
+    <div style="display: flex; flex-wrap: wrap;">
+      <div>
+          <input type="checkbox" id="checkbox-edocs" onchange="preencherAreaLinha(this)">
+          <label for="checkbox-edocs">eDocs</label>
+        </div>
+      
+        <div>
+          <input type="checkbox" id="checkbox-financeiro" onchange="preencherAreaLinha(this)">
+          <label for="checkbox-financeiro">Financeiro</label>
+        </div>
+      
+        <div>
+          <input type="checkbox" id="checkbox-wms" onchange="preencherAreaLinha(this)">
+          <label for="checkbox-wms">RMS</label>
+        </div>
+      
+        <div>
+          <input type="checkbox" id="checkbox-fiscal" onchange="preencherAreaLinha(this)">
+          <label for="checkbox-fiscal">Fiscal</label>
+        </div>
+        
+        <div>
+          <input type="checkbox" id="checkbox-vendas" onchange="preencherAreaLinha(this)">
+          <label for="checkbox-vendas">Vendas</label>
+        </div>
+      
+        <div>
+          <input type="checkbox" id="checkbox-pdv" onchange="preencherAreaLinha(this)">
+          <label for="checkbox-pdv">PDV</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="checkbox-movloja" onchange="preencherAreaLinha(this)">
+            <label for="checkbox-movloja">Mov. de Loja</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="checkbox-operacao" onchange="preencherAreaLinha(this)">
+            <label for="checkbox-operacao">Operação</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="checkbox-logistica" onchange="preencherAreaLinha(this)">
+            <label for="checkbox-logistica">Logística</label>
+        </div>
+
+      </div>
+
+      <div>
+      <textarea id="campoAdicional" maxlength="100" oninput="contarCaracteres(this)" placeholder="Clique na checkbox ou escreva seu setor"></textarea>
+      <span id="contadorCaracteres" style="background-color: transparent; color: rgb(158, 151, 151); font-size: 13px; font-family: 'Arial';">0/100</span>
+    </div>
+
+
+    <button class= "btn-gerar" type="button" onclick="gerarAssinatura()">Gerar Assinatura</button>  
+
+    <div class="resultado"></div>
+<textarea id="resultado" placeholder="Resultado" readonly></textarea>
+
+<div class="botoes">
+  <button id="copiar" type="button" onclick="copiarAssinatura()" class="btn-copiar"><i class='bx bxs-copy-alt' style='color:#ffffff'></i> Copiar</button>
+  <button id="limpar" type="button" onclick="limparCampos()" class="btn-limpar"><i class='bx bxs-eraser' style='color:#ffffff' ></i> Limpar</button>
+
+  <a href="passo-a-passo.pdf" download style="position: absolute; top: 10px; right: 12px; text-decoration: none; color: #e7dfeb;">Dúvidas? <i class="fas fa-download"></i>
+  </a>
+  <a href="https://totvssuporte.zendesk.com/agent/tickets/19023482" style="position: absolute; top: 30px; right: 12px; text-decoration: none; color: #e7dfeb;" target="_blank" class="hvr-grow">Teste a assinatura <i class='bx bxs-message-square-edit'></i></a>
+  </form>
+
+  <script src="https://cdnjs.cloudfare.com/ajax/libs/web-animations/2.3.2/web-animations.min.js"></script>
+    <script src="https://cdnjs.cloudfare.com/ajax/libs/polymer/3.4.1/polymer-element.js"></script>
+    <script src="main.js"></script>
+    <script>
+        var layerCount = 5;
+        var StarCount = 500;
+        var maxTime = 20;
+        var universe = document.getElementById("universe");
+        var w = window;
+        var d = document;
+        var e = d.documentElement;
+        var g = d.getElementsByTagName("body")[0];
+        var width = w.innerWidth || e.clientWidth || g.clientWidth;
+        var height = w.innerHeight || e.clientHeight || g.clientHeight;
+        for (var i = 0; i < StarCount; ++i) {
+            var ypos = Math.random() * height;
+            var star = document.createElement("divd");
+            var speed = 1000 * (Math.random() * maxTime + 1);
+            star.setAttribute("class", "star" + (3 - Math.floor(speed / 1000 / 8 )));
+            star.style.backgroundColor = "white";
+        
+            universe.appendChild(star);
+            star.animate(
+                [
+                    {
+                        transform: "translate3d(" + width + "px, "+ ypos + "px, 0)"
+                    },
+                    {
+                        transform:
+                        "translate3d(-" + Math.random() * 256 + "px, " + ypos + "px, 0)"
+                    }
+                ],
+                {
+                    delay: Math.random() * - speed,
+                    duration: speed,
+                    iterations: 1000
+                }
+            );
+        }  
+        
+        var elem = document.querySelector(".pulse");
+        var animation = elem.animate(
+            {
+                opacity: [0.5, 1],
+                transform: ["scale(0.5)", "scale(1)"]
+        }, 
+        {
+            direction: "alternate",
+            duration: 500,
+            iterations: Infinity
+        }
+        );
+    </script>
+  <script>
+
+    
+    function preencherAreaLinha(checkbox) {
+        var areaLinha = document.getElementById("campoAdicional");
+    
+        var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(function (cb) {
+            if (cb !== checkbox) {
+                cb.checked = false;
+            }
+        });
+    
+
+        var frases = {
+            'checkbox-edocs': "Documentos Eletrônicos | Varejo Supermercados, Linha Consinco",
+            'checkbox-financeiro': "Financeiro, Contábil, Patrimonial e Analytics | Varejo Supermercados, Linha Consinco",
+            'checkbox-wms': "Backoffice | Varejo Supermercados, Linha RMS",
+            'checkbox-fiscal': "Fiscal | Varejo Supermercados, Linha Consinco",
+            'checkbox-vendas': "Vendas | Varejo Supermercados, Linha Consinco",
+            'checkbox-pdv': "PDV | Varejo Supermercados, Linha Consinco",
+            'checkbox-movloja': "Movimentação de Loja e Estoque de loja | Varejo Supermercados, linha Consinco",
+            'checkbox-logistica': "Logística | Varejo Supermercados, linha WMS",
+            'checkbox-operacao': "Operação de Loja e CD | Varejo Supermercados, linha WMS"
+
+        };
+    
+        // Obtém a frase correspondente ao checkbox
+        var frase = frases[checkbox.id];
+    
+        if (checkbox.checked) {
+            areaLinha.value = frase || ""; // Usa a frase correspondente ou uma string vazia
+        } else {
+            areaLinha.value = ""; // Limpa o campo se desmarcar
+        }
+    
+        contarCaracteres(areaLinha); // Atualiza o contador de caracteres
+    }
+    
+    function gerarAssinatura() {
+        var cargo = document.getElementById("cargo").value;
+        var currentUserName = "{{current_user.name}}";
+        var currentUserPhone = "{{current_user.phone}}";
+        var leaderInfo = '';
+        var mensagemErro = document.getElementById("mensagemErro");
+    
+        mensagemErro.textContent = ""; // Limpa a mensagem de erro
+
+        // Verifica se o campo adicional está vazio
+    var campoAdicional = document.getElementById("campoAdicional").value.trim();
+    if (campoAdicional === "") {
+        alert("Por favor, preencha todos os campos antes de gerar a assinatura.");
+        return;
+    }
+    
+        if (cargo === "") {
+            mensagemErro.textContent = "Preencha todos os campos antes de gerar a assinatura!";
+            mensagemErro.style.display = "block";
+            setTimeout(function () {
+                mensagemErro.style.display = "none";
+            }, 1000); // Oculta a mensagem após 1 segundo
+            return; // Retorna se nenhuma informação foi selecionada
+        }
+    
+        if (cargo === "Rolf Guenze") {
+            leaderInfo =
+                'Líder: [Rolf Guenze](rolf.guenze@totvs.com.br) - [(16) 9 92975421![](https://centraldeatendimento.totvs.com/hc/article_attachments/15747636172695)](https://api.whatsapp.com/send?phone=5516992975421)';
+        } else if (cargo === "Hebert Pedersoli") {
+            leaderInfo =
+                'Líder: [Hebert Pedersoli](hebert.pedersoli@totvs.com.br) - [(16) 9 9401-2783![](https://centraldeatendimento.totvs.com/hc/article_attachments/15747636172695)](https://api.whatsapp.com/send?phone=5516994012783)';
+        } else if (cargo === "Larissa Curbage") {
+            leaderInfo =
+                'Líder: [Larissa Curbage](larissa.curbage@totvs.com.br)  -  [(16) 9 9198-0510![](https://centraldeatendimento.totvs.com/hc/article_attachments/15747636172695)](https://api.whatsapp.com/send?phone=5516991980510)';
+        } else if (cargo === "Paulo Basile") {
+            leaderInfo =
+                'Líder: [Paulo Basile](paulo.basile@totvs.com.br)  -  [(16) 9 9296-6529![](https://centraldeatendimento.totvs.com/hc/article_attachments/15747636172695)](https://api.whatsapp.com/send?phone=5516992966529)';
+        } else if (cargo === "OUTRO") {
+            var outroLider = document.getElementById("outroLider").value.trim();
+            var outroTelefone = document.getElementById("outroTelefone").value.trim();
+    
+            if (outroLider !== "") {
+                leaderInfo = '' + outroLider;
+    
+                if (outroTelefone !== "") {
+                    leaderInfo += ' - ' + formatarTelefone(outroTelefone);
+                }
+            } else {
+                leaderInfo = 'Sem informações';
+            }
+        }
+    
+        var campoAdicional = document.getElementById("campoAdicional").value.trim();
+        var assinaturaSupermercados = "";
+    
+        if (cargo !== "OUTRO") {
+            assinaturaSupermercados = "{{dc.assinatura_supermercados}}";
+        }
+    
+        var quebraDeLinha = '\n';
+    
+        // Informação Adicional
+        var informacaoAdicional = '';
+    
+        var assinatura = '[![TOTVS](https://totvs.com/assinatura/11-assinatura-email-logo-totvs.gif)](https://totvs.com)![](https://totvs.com/assinatura/10-assinatura-email-grafismo.gif) ' +
+            currentUserName + ' - ' + currentUserPhone + quebraDeLinha +
+            leaderInfo + quebraDeLinha +
+            campoAdicional + quebraDeLinha +
+            assinaturaSupermercados + quebraDeLinha + quebraDeLinha + informacaoAdicional;
+    
+        document.getElementById("resultado").value = assinatura;
+    
+        // Mostrar os botões após gerar a assinatura
+        document.getElementById("copiar").style.display = "inline-block";
+        document.getElementById("limpar").style.display = "inline-block";
+        
+        efeitoDigitar(assinatura);
+    }
+    
+    // Adicione a função de efeitoDigitar ao seu código
+function efeitoDigitar(texto) {
+    var resultado = document.getElementById("resultado");
+    resultado.value = ""; // Limpar conteúdo anterior
+    var index = 0;
+
+    function digitar() {
+        resultado.value += texto[index];
+        index++;
+
+        if (index < texto.length) {
+            setTimeout(digitar, 0); 
+        }
+    }
+
+    digitar();
+}
+    
+    
+    function mostrarCampoOutro() {
+      var cargo = document.getElementById("cargo").value;
+      var campoOutro = document.getElementById("campoOutro");
+      var campoAdicional = document.getElementById("campoAdicional");
+    
+      if (cargo === "OUTRO") {
+        // Torna o campoOutro visível
+        campoOutro.style.display = "block";
+    
+        // Adiciona a classe para ocultar os <br>
+        document.querySelectorAll('.hide-br').forEach(function (br) {
+          br.style.display = "none";
+        });
+    
+        // Remove as checkboxes e labels relacionados
+        var checkboxesLabels = document.querySelectorAll('input[type="checkbox"] + label');
+        checkboxesLabels.forEach(function (checkboxLabel) {
+          checkboxLabel.style.display = "none";
+        });
+    
+        // Ajusta a posição do campoAdicional
+        campoAdicional.style.marginTop = "-25px"; // Ajuste o valor conforme necessário
+      
+    
+      } else {
+        // Torna o campoOutro invisível
+        campoOutro.style.display = "none";
+    
+        // Remove a classe para exibir os <br>
+        document.querySelectorAll('.hide-br').forEach(function (br) {
+          br.style.display = "block";
+        });
+    
+        // Exibe novamente as checkboxes e labels
+        var checkboxesLabels = document.querySelectorAll('input[type="checkbox"] + label');
+        checkboxesLabels.forEach(function (checkboxLabel) {
+          checkboxLabel.style.display = "flex"; // Ou o valor desejado para exibir novamente
+        });
+    
+        // Reseta a margem do campoAdicional para o valor padrão
+        campoAdicional.style.marginTop = "5px"; // Ajuste o valor conforme necessário
+    
+      }
+    }
+    
+    
+
+    
+    
+
+    function contarCaracteres(textarea) {
+      var contador = document.getElementById("contadorCaracteres");
+      contador.textContent = textarea.value.length + "/100";
+    }
+
+    function limparCampos() {
+        document.getElementById("cargo").value = "";
+        document.getElementById("outroLider").value = "";
+        document.getElementById("outroTelefone").value = "";
+        document.getElementById("campoAdicional").value = "";
+        document.getElementById("resultado").value = "";
+      
+        // Desmarcar todas as checkboxes
+        var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(function (cb) {
+          cb.checked = false;
+        });
+      
+        var contador = document.getElementById("contadorCaracteres");
+        contador.textContent = "0/100";
+      
+        // Esconder os botões após limpar os campos
+        document.getElementById("copiar").style.display = "none";
+        document.getElementById("limpar").style.display = "none";
+      }
+      
+    
+
+    function copiarAssinatura() {
+      var resultado = document.getElementById("resultado");
+      resultado.select();
+      resultado.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      alert("Assinatura copiada com sucesso!");
+    }
+    
+    function formatarTelefone(telefone) {
+      var telefoneFormatado = telefone.replace(/\D/g, ""); // Remove caracteres não numéricos
+      telefoneFormatado = telefoneFormatado.replace(/^(\d{2})(\d)/g, "($1) $2"); // Coloca parênteses em volta dos dois primeiros dígitos
+      telefoneFormatado = telefoneFormatado.replace(/(\d)(\d{4})$/, "$1-$2"); // Coloca hífen entre o quarto e o quinto dígitos
+      return telefoneFormatado;
+    }
+    
+
+  </script>
+
+</body>
+</html>
+
+
+
+<div id="mensagemErro"></div>
+
+
+
+</body>
+</html>

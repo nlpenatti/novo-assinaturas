@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Formulário de Assinatura</title>
+</head>
+<body>
+  
+  <div class="container">
+    <div class="card">
+      <div class="loader">
+        <h1>crie assinaturas</h1>
+        <div class="words">
+          <span class="word">edocs</span>
+          <span class="word">finaceiro</span>
+          <span class="word">rms</span>
+          <span class="word">contábil</span>
+          <span class="word">patrimonial</span>
+          <span class="word">vendas</span>
+          <span class="word">pdv</span>
+        </div>
+      </div>
+    </div>
+    
+    
+    <hr class="linha_horizontal">
+    <h1 style="font-size: 20px; color: #ccc;">Selecione abaixo</h1>
+    <div class="switch-container">
+      <label class="switch-label">Outra Área</label>
+      <label class="switch">
+        <input type="checkbox" id="toggleArea" checked>
+        <span class="slider"></span>
+      </label>
+      <label class="switch-label">Suporte</label>
+    </div>
+    <hr class="linha_horizontal">
+
+    <div id="suporte" class="form-section show">
+      <form id="suporteForm">
+        <label for="cargo" class="palavrastitulo">Selecione seu líder:</label>
+        <select id="leader">
+          <option value="Rolf Guenze">Rolf Guenze</option>
+          <option value="Hebert Pedersoli">Hebert Pedersoli</option>
+          <option value="Larissa Curbage">Larissa Curbage</option>
+          <option value="Paulo Basile">Paulo Basile</option>
+        </select>
+        
+        <label for="sector">Selecione seu setor:</label>
+        <select id="sector">
+          <option value="Documentos Eletrônicos">Documentos Eletrônicos</option>
+          <option value="Financeiro, Contábil, Patrimonial e Analytics ">Financeiro, Contábil, Patrimonial e Analytics</option>
+          <option value="Fiscal">Fiscal</option>
+          <option value="informar-setor">Informar setor</option>
+        </select>
+        
+        <button>
+          <div class="svg-wrapper-1">
+            <div class="svg-wrapper">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+              >
+                <path fill="none" d="M0 0h24v24H0z"></path>
+                <path
+                  fill="currentColor"
+                  d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <span>Criar assinatura</span>
+        </button>
+      </form>
+    </div>
+
+    <br>
+    <div id="outra" class="form-section">
+      <div class="input-container">
+        <input placeholder="Exemplo: Gerente Silvia" class="input-field" type="text" id="name">
+        <label for="name" class="input-label">Qual seu cargo e seu nome?</label>
+        <span class="input-highlight"></span>
+      </div>
+  
+      <div class="input-container">
+        <input placeholder="Exemplo: (16) 91234-5678" class="input-field" type="tel" id="phone">
+        <label for="phone" class="input-label">Qual seu telefone?</label>
+        <span class="input-highlight"></span>
+      </div>
+  
+      <div class="input-container">
+        <input placeholder="Ex: Documentos Eletrônicos" class="input-field" type="text" id="otherSector">
+        <label for="otherSector" class="input-label">Qual é seu setor?</label>
+        <span class="input-highlight"></span>
+      </div>
+
+      <button>
+        <div class="svg-wrapper-1">
+          <div class="svg-wrapper">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+            >
+              <path fill="none" d="M0 0h24v24H0z"></path>
+              <path
+                fill="currentColor"
+                d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+              ></path>
+            </svg>
+          </div>
+        </div>
+        <span>Criar assinatura</span>
+      </button>
+      
+
+<script src="./script.js"></script>
+</body>
+</html>
