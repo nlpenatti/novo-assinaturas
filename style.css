@@ -56,9 +56,11 @@ h3 {
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
+  font-size: 15px;
 }
 .switch-label {
   margin-right: 10px;
+  font-size: 15px;
 }
 .form-section {
   display: none;
